@@ -5,7 +5,7 @@ export const TodoItem = (props) => {
     <div>
       <h4>{props.todo.title}</h4>
       <p>{props.todo.desc}</p>
-      <button className='btn btn-danger'>Delete</button>
+      <button className='btn btn-danger btn-sm'>Delete</button>
     </div>
   )
 }
