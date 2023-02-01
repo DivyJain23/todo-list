@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import { Footer } from './MyComponents/Footer';
 import Header from './MyComponents/Header';
@@ -6,9 +7,13 @@ import { Todos } from './MyComponents/Todos';
 function App() {
   const onDelete = (todo) => {
     console.log(todo);
+
+    setTodos(todos.filter((e) => {
+      return e !== todo;
+    }))
   }
 
-  let todos = [
+  const[todos, setTodos] = useState  ([
     {
       sno: 1,
       title: "Go to The Market",
@@ -24,7 +29,7 @@ function App() {
       title: "Go to The Market 3",
       desc: "You need to go to the market 3"
     },
-  ]
+  ])
 
   return (
     <div classNameName="App">
