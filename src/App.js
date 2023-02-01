@@ -4,8 +4,8 @@ import Header from './MyComponents/Header';
 import { Todos } from './MyComponents/Todos';
 
 function App() {
-  const onDelete = () => {
-    console.log("i am on delete");
+  const onDelete = (todo) => {
+    console.log(todo);
   }
 
   let todos = [
