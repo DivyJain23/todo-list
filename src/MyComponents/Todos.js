@@ -12,11 +12,10 @@ export const Todos = (props) => {
       {props.todos.length === 0 ? <Emptyplaceholder desc="No Todos Found" /> :
         props.todos.map((todo) => {
           return (
-            <>
-            <TodoItem todo={todo} key={todo.sno} onDelete={props.onDelete}></TodoItem><hr/>
-            </>
-          )
-        })}
+            <TodoItem todo={todo} key={todo.sno} onDelete={props.onDelete}></TodoItem> 
+            )
+          })}
+          
     </div>
   )
 }

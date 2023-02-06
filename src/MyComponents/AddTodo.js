@@ -20,11 +20,11 @@ export const AddTodo = (props) => {
             <form onSubmit={submit}>
                 <h3>Add a Todo</h3>
                 <div className="mb-3">
-                    <label for="title" className="form-label">Todo Title</label>
+                    <label htmlFor="title" className="form-label">Todo Title</label>
                     <input type="text" className="form-control" value={title} onChange={(e)=>{setTitle(e.target.value)}} id="title" aria-describedby="emailHelp"></input>
                 </div>
                 <div className="mb-3">
-                    <label for="desc" className="form-label">Todo Description</label>
+                    <label htmlFor="desc" className="form-label">Todo Description</label>
                     <input type="text" className="form-control" value={desc} onChange={(e)=>{setDesc(e.target.value)}} id="desc"></input>
                 </div>
                 <button type="submit" className="btn btn-sm btn-success">Submit</button>

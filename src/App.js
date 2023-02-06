@@ -26,8 +26,6 @@ function App() {
   }, [todos])
 
   const onDelete = (todo) => {
-    console.log(todo);
-
     setTodos(todos.filter((e) => {
       return e !== todo;
     }))
