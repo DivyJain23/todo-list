@@ -5,13 +5,13 @@ import { Footer } from './MyComponents/Footer';
 import Header from './MyComponents/Header';
 import { Todos } from './MyComponents/Todos';
 import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
+  BrowserRouter as Router,
+  Routes,
+  Route
 } from "react-router-dom";
+import { About } from './MyComponents/About';
 
-function App() { 
+function App() {
   let initTodo;
   if (localStorage.getItem("todos") === null) {
     initTodo = [];
@@ -20,10 +20,10 @@ function App() {
   }
 
   const [todos, setTodos] = useState(initTodo);
-  
+
   useEffect(() => {
-    localStorage.setItem("todos",JSON.stringify(todos));
-   }, [todos])
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos])
 
   const onDelete = (todo) => {
     console.log(todo);
@@ -50,14 +50,20 @@ function App() {
 
   return (
     <div className="">
-      <>
-        <Header title="My Todo List" />
-        <AddTodo addTodo={addTodo} />
-        <Todos todos={todos} onDelete={onDelete} />
-        <Footer />
-      </>
-    </div>
-  );
+      <Router>
+      <Header title="My Todo List" />
+        <Routes>
+          <Route exact path="/" element={
+              <>
+                <AddTodo addTodo={addTodo} />
+                <Todos todos={todos} onDelete={onDelete} />I
+              </>
+          }/>
+          <Route exact path="/about" element={<About/>}/>
+        </Routes>
+      <Footer/>
+      </Router>
+    </div>)    
 }
 
 export default App;
